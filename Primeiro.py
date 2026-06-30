@@ -3,63 +3,69 @@ import math
 print ('Tem que ter a requisição de equipamentos, por favor digite abaixo os equipamentos:')
 computadores = switchs = switchsgre = dvrs = impressoras = servidorarq = roteadores = 0
 
-resposta = str(input('Voce deseja usar computadores?')).strip().upper(0)
+resposta = str(input('Voce deseja usar computadores [SIM/NÃO]?'))
 if resposta == 'sim':
- computadores = int(input('Quantos computadores usará?'))
+  computadores = int(input('Quantos computadores usará?'))
 else:
  pass
-resposta1 = str(input('Voce deseja usar switchs?')).strip().upper(0)
-if resposta == 'sim':
- switchs = int(input('Quantos cswithcs usará?'))
+resposta1 = str(input('Voce deseja usar switchs [SIM/NÃO]?'))
+if resposta1 == 'sim':
+  switchs = int(input('Quantos swithcs usará?'))
 else:
  pass
-resposta2 = str(input('Voce deseja usar switchs gerenciaveis?')).strip().upper(0)
-if resposta == 'sim':
- switchsgre = int(input('Quantos usará?'))
+resposta2 = str(input('Voce deseja usar switchs gerenciaveis [SIM/NÃO]?'))
+if resposta2 == 'sim':
+  switchsgre = int(input('Quantos usará?'))
 else:
  pass
-resposta3 = str(input('Voce deseja usar DVR?')).strip().upper(0)
-if resposta == 'sim':
- dvrs = int(input('Quantos DVR usará?'))
+resposta3 = str(input('Voce deseja usar DVR [SIM/NÃO]?'))   
+if resposta3 == 'sim':
+  dvrs = int(input('Quantos DVR usará?'))
 else:
  pass
-resposta4 = str(input('Voce deseja usar impressoras?')).strip().upper(0)
-if resposta == 'sim':
+resposta4 = str(input('Voce deseja usar impressoras [SIM/NÃO]?'))   
+if resposta4 == 'sim':
  impressoras = int(input('Quantas impressoras usará?'))
 else:
  pass
-resposta5 = str(input('Voce deseja usar servidores de arquivos?')).strip().upper(0)
-if resposta == 'sim':
- servidorarq = int(input('Quantos usará?'))
+resposta5 = str(input('Voce deseja usar servidores de arquivos [SIM/NÃO]?'))
+if resposta5 == 'sim':
+  servidorarq = int(input('Quantos usará?'))
 else:
  pass
-resposta6 = str(input('Voce deseja usar roteadores?')).strip().upper(0)
-if resposta == 'sim':
- roteadores = int(input('Quantos roteadores usará?'))
+resposta6 = str(input('Voce deseja usar roteadores [SIM/NÃO]?'))
+if resposta6 == 'sim':
+  roteadores = int(input('Quantos roteadores usará?'))
 else:
  pass
 #Fazendo a soma dos componentes para quantidade de conectores RJ45#
-cabo1 = computadores * 2
-cabo2 = switchs * 2
-cabo3 = switchsgre * 2
-cabo4 = dvrs * 2 
-cabo5 = impressoras * 2
-cabo6 = servidorarq * 2
-cabo7 = roteadores * 2
+conectores1 = computadores * 2
+conectores2 = switchs * 2
+conectores3 = switchsgre * 2
+conectores4 = dvrs * 2 
+conectores5 = impressoras * 2
+conectores6 = servidorarq * 2
+conectores7 = roteadores * 2
 #Resposta:#
-print ('A quantidade de computadores é {} e a quantidade de conectores para conexão é {}'.format(computadores,cabo1))
+print ('A quantidade de computadores é {} e a quantidade de conectores para conexão é {}'.format(computadores,conectores1))
 
-print ('A quantidade de switchs é {} e a quantidade de conectores para conexão é {}'.format(switchs,cabo2))
+print ('A quantidade de switchs é {} e a quantidade de conectores para conexão é {}'.format(switchs,conectores2))
 
-print ('A quantidade de switchs gerenciaveis é {} e a quantidade de conectores para conexão é {}'.format(switchsgre,cabo3))
+print ('A quantidade de switchs gerenciaveis é {} e a quantidade de conectores para conexão é {}'.format(switchsgre,conectores3))
 
-print ('A quantidade de switchs gerenciaveis é {} e a quantidade de conectores para conexão é {}'.format(dvrs,cabo4))
+print ('A quantidade de switchs gerenciaveis é {} e a quantidade de conectores para conexão é {}'.format(dvrs,conectores4))
 
-print ('A quantidade de impressoras que serão utilizados é {} e a qauntidade de conectores necessários é {}'.format(impressoras, cabo5))
+print ('A quantidade de impressoras que serão utilizados é {} e a qauntidade de conectores necessários é {}'.format(impressoras, conectores5))
 
-print ('A quantidade de servidores que serão utilizados é {} e a quantidade de conectores necessários é {} '.format(servidorarq, cabo6))
+print ('A quantidade de servidores que serão utilizados é {} e a quantidade de conectores necessários é {} '.format(servidorarq, conectores6))
 
-print ('A quantidade de roteadores utilizados é {} e a quantidade de conectores necessários {}'.format(roteadores, cabo7))
+print ('A quantidade de roteadores utilizados é {} e a quantidade de conectores necessários {}'.format(roteadores, conectores7))
+#resposta total:#
+totalconec = conectores1 + conectores2 + conectores3 + conectores4 + conectores5 + conectores6 + conectores7
+reservaconec = totalconec + (totalconec * 10 / 100)
+print (f'Total de conectores que serão utilizados: {totalconec} CONECTORES')
+
+print ('IMPORTANTE! mantenha sempre uma pequena quantidade de conectores como reserva para eventuais contra tempos. no seu caso recomendo {} conectores'.format(math.ceil(reservaconec)))
 #Calculando o tamanho da area e distancia dos equipamentos#
 area = int(input('Qual é a quantidade de metros quadrados do seu projeto?'))
 
