@@ -1,4 +1,3 @@
-area = int(input('area:'))
-distancia = int(input('distancia'))
-tt = area * distancia
-print ('total é {}'.format(tt))
+respota = str(input('voce deseja usar computador'))
+if respota == 'sim':
+    tt = int(input('coloque a quantidade'))
